@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-
 version() {
-  echo "Bats 0.4.0"
+  echo "Bats 0.5.0-fork"
 }
 
 usage() {
@@ -71,7 +70,7 @@ while getopts ":hvctpro:-:" opt; do
 	case $OPTARG in
 	  'pretty')
 	     opt=p;;
-	  'tap') 
+	  'tap')
 	     opt=t;;
 	  'help')
 	     opt=h;;
@@ -124,7 +123,7 @@ while getopts ":hvctpro:-:" opt; do
 done
 shift $((OPTIND-1))
 
-arguments=("${@}") 
+arguments=("${@}")
 
 if [ "${#arguments[@]}" -eq 0 ]; then
   usage >&2
